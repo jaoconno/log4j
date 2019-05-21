@@ -582,6 +582,7 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
       <optional>true</optional>
     </dependency>
   </dependencies>
+ <!--
   <distributionManagement>
     <repository>
       <id>logging.repo</id>
@@ -592,5 +593,18 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
       <url>scp://localhost/${user.dir}/target/site-deploy</url>
     </site>
   </distributionManagement>
+-->
+     <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>snapshot</name>
+            <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>release</name>
+            <url>http://localhost:8081/nexus/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
 </project>
 
